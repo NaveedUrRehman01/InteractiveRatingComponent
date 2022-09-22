@@ -15,7 +15,7 @@ function display (){
     document.querySelector('.card-rating-body').style.display="none";
     document.querySelector('.thankyou').style.display="flex";
    let stars = document.querySelector('.rbtn').val();
-   document.getElementById('rating').innerText = stars;
+   document.getElementById('rating').innerHTML = stars;
   console.log(stars)
   console.log('click)
   }
