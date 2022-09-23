@@ -1,8 +1,18 @@
 // Add active class to the current button (highlight it)
 var btns = document.getElementsByClassName("rating-btn");
 
-// da header che za console.log kam no null rakaii
-console.log(btns,btns.length)
+
+
+let buttons = Array.from(document.getElementsByClassName('rbtn'));
+
+ buttons.map(button =>{
+  button.addEventListener('click', (e)=>{
+    document.querySelector('.card-rating-body').style.display="none";
+    document.querySelector('.thankyou').style.display="flex";
+    document.getElementById('rating').innerHTML = e.target.value;
+  })
+ })
+
 
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
@@ -11,11 +21,14 @@ for (var i = 0; i < btns.length; i++) {
   this.className += " active";
   });
 }
-function display (){
-    document.querySelector('.card-rating-body').style.display="none";
-    document.querySelector('.thankyou').style.display="flex";
-   let stars = document.querySelector('.rbtn').val();
-   document.getElementById('rating').innerHTML = stars;
-  console.log(stars)
-  console.log('click)
-  }
+// const display = () =>{
+//     document.querySelector('.card-rating-body').style.display="none";
+//     document.querySelector('.thankyou').style.display="flex";
+//   //  let stars = document.getElementsByName('rbtn').value;
+//   // document.getElementById('rating').innerHTML = e.target.value;
+//   buttons.map((button =>{
+//     button.addEventListener('click', (e)=>{
+//       console.log('clicked');
+//     })
+//   }))
+//   }
